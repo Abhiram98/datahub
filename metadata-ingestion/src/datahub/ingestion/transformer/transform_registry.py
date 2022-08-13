@@ -33,6 +33,7 @@ from datahub.ingestion.transformer.mark_dataset_status import MarkDatasetStatus
 from datahub.ingestion.transformer.remove_dataset_ownership import (
     SimpleRemoveDatasetOwnership,
 )
+from datahub.ingestion.transformer.set_database_name_alias import SetDatabaseNameAliasTransformer
 
 transform_registry = PluginRegistry[Transformer]()
 
@@ -71,4 +72,7 @@ transform_registry.register(
 )
 transform_registry.register(
     "pattern_add_dataset_schema_tags", PatternAddDatasetSchemaTags
+)
+transform_registry.register(
+    "set_database_name_alias", SetDatabaseNameAliasTransformer
 )
